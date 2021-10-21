@@ -86,7 +86,6 @@ module "iam" {
 
 # ========================================================
 # RDS 作成
-#
 # [subnetGroup, securityGroup, RDS instance(postgreSQL)]
 # ========================================================
 # RDS (PostgreSQL)

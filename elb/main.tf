@@ -114,18 +114,3 @@ resource "aws_lb_listener" "https" {
     }
   }
 }
-
-# =============================================================
-# https対応: ドメインと紐付け
-# =============================================================
-# Route53 A record  ALBとドメインの紐付け用レコード
-resource "aws_route53_record" "main" {
-  type = "A"
-
-  # = は付けない
-  alias {
-    name                   = aws_lb.main.dns_name
-    zone_id                = aws_lb.main.zone_id
-    evaluate_target_health = true
-  }
-}
