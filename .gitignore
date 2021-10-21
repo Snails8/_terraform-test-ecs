@@ -1,0 +1,12 @@
+# IED
+.idea
+
+.env
+
+# Terraform
+.terraform
+*.tfstate
+*.tfstate.backup
+
+# EC2 ssh-key
+ec2/sample-ec2-key.pub
