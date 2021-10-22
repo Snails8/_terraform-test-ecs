@@ -1,3 +1,14 @@
+# ===========================================================================
+# ELB の設定 AWS Elastic Load Balancing
+#
+# 1. ALBの作成
+# 1-1. httpとhttpsの通信を受け取れるように
+# 2. 通信を行うためにALBのリスナー設定( http => httpsに流す )
+# 3. ECSのnginxに流してやる(処理の依存関係上ココでは行わないのでoutput)
+
+# ACM ECS と依存関係
+# ===========================================================================
+
 # ========================================================================
 # ALB 作成 (+ subnets , security Group 紐付け)
 # https://docs.aws.amazon.com/ja_jp/elasticloadbalancing/latest/application/introduction.html
@@ -45,6 +56,7 @@ resource "aws_security_group_rule" "http" {
 
   cidr_blocks = ["0.0.0.0/0"]
 }
+
 
 # ============================================================
 # 接続リクエストのLBの設定(リスナーの追加) (HTTP)
